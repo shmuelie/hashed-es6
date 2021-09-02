@@ -25,6 +25,9 @@
     },
     "homepage": "https://shmuelie.github.io/hashing-es6/",
     "keywords": [
+        "hash",
+        "state",
+        "url"
     ],
     "license": "MIT",
     "main": "./dist/index.min.js",
