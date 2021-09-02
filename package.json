@@ -1,0 +1,44 @@
+{
+    "author": {
+        "email": "shmueli.yosef@englard.net",
+        "name": "Shmueli Englard"
+    },
+    "bugs": {
+        "url": "https://github.com/shmuelie/hashing-es6/issues"
+    },
+    "description": "Serialize state from multiple providers using location.hash",
+    "devDependencies": {
+        "esm": "3.2.25",
+        "gulp": "4.0.2",
+        "gulp-cli": "2.3.0",
+        "gulp-rename": "2.0.0",
+        "gulp-rewrite-imports": "1.1.0",
+        "gulp-sourcemaps": "3.0.0",
+        "gulp-terser": "2.0.1",
+        "gulp-typedoc": "3.0.1",
+        "gulp-typescript": "6.0.0-alpha.1",
+        "merge2": "1.4.1",
+        "rimraf": "3.0.2",
+        "terser": "5.7.0",
+        "typedoc": "0.20.36",
+        "typescript": "4.2.4"
+    },
+    "homepage": "https://shmuelie.github.io/hashing-es6/",
+    "keywords": [
+    ],
+    "license": "MIT",
+    "main": "./dist/index.min.js",
+    "name": "hashing-es6",
+    "private": false,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shmuelie/hashing-es6.git"
+    },
+    "scripts": {
+        "build": "gulp build",
+        "preinstall": "npx -y only-allow pnpm"
+    },
+    "type": "module",
+    "types": "./dist/index.d.ts",
+    "version": "1.0.0"
+}

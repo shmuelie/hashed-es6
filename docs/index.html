@@ -1,0 +1,208 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>hashing-es6</title>
+	<meta name="description" content="Documentation for hashing-es6">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">hashing-es6</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>hashing-es6</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#hashed-es6" id="hashed-es6" style="color: inherit; text-decoration: none;">
+					<h1>hashed-es6</h1>
+				</a>
+				<p>Serialize your application state in the URL hash.</p>
+				<p>Hashed-ES6 lets you register any number of providers and serializes their state in the URL hash. When your application loads (or if the URL changes by other means), the providers will be notified of the new state.</p>
+				<p>TypeScript port of <a href="https://github.com/tschaub/hashed">hashed</a>.</p>
+				<a href="#setup" id="setup" style="color: inherit; text-decoration: none;">
+					<h2>Setup</h2>
+				</a>
+				<p>Install <code>hashed-es6</code> with <a href="https://nodejs.org/"><code>npm</code></a>.</p>
+				<p>In your project root:</p>
+				<pre><code><span style="color: #001080">npm</span><span style="color: #000000"> </span><span style="color: #001080">install</span><span style="color: #000000"> </span><span style="color: #001080">hashed</span><span style="color: #000000">-</span><span style="color: #001080">es6</span><span style="color: #000000"> --</span><span style="color: #001080">save</span>
+</code></pre>
+				<p>In one of your application modules:</p>
+				<pre><code class="language-js"><span style="color: #AF00DB">import</span><span style="color: #000000"> </span><span style="color: #0000FF">*</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000">  </span><span style="color: #001080">hashed</span><span style="color: #000000"> = </span><span style="color: #A31515">&#039;hashed&#039;</span><span style="color: #000000">;</span>
+</code></pre>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h2>Examples</h2>
+				</a>
+				<a href="#single-provider-default-serializers-and-deserializers" id="single-provider-default-serializers-and-deserializers" style="color: inherit; text-decoration: none;">
+					<h3>Single provider, default serializers and deserializers</h3>
+				</a>
+				<p>The simplest use of hashed is to register a single state provider.  This example uses the built-in functions for transforming state values to strings for the URL (serializing) and transforming strings from the URL into state values (deserializing).</p>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">state</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">count:</span><span style="color: #000000"> </span><span style="color: #098658">42</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">color:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;blue&#039;</span>
+<span style="color: #000000">};</span>
+
+<span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">listener</span><span style="color: #000000">(</span><span style="color: #001080">newState</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// called when the state in the URL is different than what we have</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #008000">// register a state provider</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">update</span><span style="color: #000000"> = </span><span style="color: #001080">hashed</span><span style="color: #000000">.</span><span style="color: #795E26">register</span><span style="color: #000000">(</span><span style="color: #001080">state</span><span style="color: #000000">, </span><span style="color: #001080">listener</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// When the state of your application changes, update the hash.</span>
+<span style="color: #795E26">update</span><span style="color: #000000">({</span><span style="color: #001080">count:</span><span style="color: #000000"> </span><span style="color: #098658">43</span><span style="color: #000000">}); </span><span style="color: #008000">// URL hash will become #/count/43/color/blue</span>
+</code></pre>
+				<a href="#single-provider-custom-serializers-and-deserializers" id="single-provider-custom-serializers-and-deserializers" style="color: inherit; text-decoration: none;">
+					<h3>Single provider, custom serializers and deserializers</h3>
+				</a>
+				<p>The default serializers and deserializers work for primitive state values (string, boolean, number).  Dates will be serialized as ISO strings (and deserialized from the same).  Arrays and objects will be serialized with <code>JSON.stringify()</code> and deserialized with <code>JSON.parse()</code>.  You can override this behavior if you want to have prettier URLs or to serialize complex or cyclic data.</p>
+				<pre><code class="language-js"><span style="color: #008000">// Assume your state has a &quot;colors&quot; array and</span>
+<span style="color: #008000">// you don&#039;t want JSON serialization in the URL.</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">config</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">colors:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">default:</span><span style="color: #000000"> [] </span><span style="color: #008000">// no colors by default</span>
+<span style="color: #000000">    </span><span style="color: #001080">serialize</span><span style="color: #000000">: </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">colors</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #008000">// Instead of JSON, you want comma delimited values.</span>
+<span style="color: #000000">      </span><span style="color: #008000">// Note that if you expect strings that should be encoded,</span>
+<span style="color: #000000">      </span><span style="color: #008000">// use encodeURIComponent here.</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">colors</span><span style="color: #000000">.</span><span style="color: #795E26">join</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;,&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    </span><span style="color: #795E26">deserialize</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">string</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #008000">// Note that if you use encodeURIComponent above in serialize,</span>
+<span style="color: #000000">      </span><span style="color: #008000">// you should use decodeURIComponent here.</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">string</span><span style="color: #000000">.</span><span style="color: #795E26">split</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;,&#039;</span><span style="color: #000000">);</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">};</span>
+
+<span style="color: #008000">// register a state provider</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">update</span><span style="color: #000000"> = </span><span style="color: #001080">hashed</span><span style="color: #000000">.</span><span style="color: #795E26">register</span><span style="color: #000000">(</span><span style="color: #001080">config</span><span style="color: #000000">, </span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">state</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// this will get called with a &quot;colors&quot; array</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #795E26">update</span><span style="color: #000000">([</span><span style="color: #A31515">&#039;green&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;blue&#039;</span><span style="color: #000000">]); </span><span style="color: #008000">// URL hash will become #/colors/green,blue</span>
+</code></pre>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h2>API</h2>
+				</a>
+				<a href="#hashedregister" id="hashedregister" style="color: inherit; text-decoration: none;">
+					<h3><code>hashed.register</code></h3>
+				</a>
+				<p>The <code>hashed</code> module exports a <code>register</code> function that is to be called by components that want to initialize their state by deserializing values from the URL hash or persist their state by serializing values to the URL hash.  Multiple components (that may not know about one another) can register for &quot;slots&quot; in the hash.</p>
+				<p>The <code>register</code> function takes two arguments:</p>
+				<ul>
+					<li><p><strong>config</strong> - <code>Object</code> Definition for the state &quot;schema&quot; (default values and types for each field).  The <code>config</code> object takes two forms, depending on whether or not you want the default serializers and deserializers.</p>
+						<p>Without custom serializers or deserializers, the config is an objects with property values representing the default state.  For example, if your state is represented by a &quot;start&quot; date of Jan 1, 2000 and a &quot;count&quot; value of 42, your <code>config</code> would look like this:</p>
+						<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">config</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  </span><span style="color: #001080">start:</span><span style="color: #000000"> </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Date</span><span style="color: #000000">(</span><span style="color: #267F99">Date</span><span style="color: #000000">.</span><span style="color: #795E26">UTC</span><span style="color: #000000">(</span><span style="color: #098658">2000</span><span style="color: #000000">, </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #098658">1</span><span style="color: #000000">)),</span>
+<span style="color: #000000">  </span><span style="color: #001080">count:</span><span style="color: #000000"> </span><span style="color: #098658">42</span>
+<span style="color: #000000">};</span>
+</code></pre>
+						<p>If you don&#39;t want to use the build-in functions for serializing and deserializing values, use an object with <code>default</code>, <code>serialize</code>, and <code>deserialize</code> properties.  The <code>default</code> value represents the default value (if none is present in the URL).  The <code>serialize</code> function is called with your state value and returns a string for the URL.  The <code>deserialize</code> function is called with a string and returns the value for your state.</p>
+					</li>
+					<li><p><strong>listener</strong> - <code>function(Object)</code> A function that is called when the URL hash is updated.  The object properties represent new state values.  The object will not include property values that have not changed.</p>
+					</li>
+				</ul>
+				<p>The <code>register</code> function returns a function:</p>
+				<ul>
+					<li><code>function(Object)</code> A function that should be called whenever a component&#39;s state changes.  The URL hash will be updated with serialized versions of the state values.</li>
+				</ul>
+				<a href="#hashedunregister" id="hashedunregister" style="color: inherit; text-decoration: none;">
+					<h3><code>hashed.unregister</code></h3>
+				</a>
+				<p>The <code>unregister</code> function is to stop synchronizing state with the URL hash.  It should be called with the same <code>listener</code> function passed to the <code>register</code> function.</p>
+				<p><img src="https://github.com/shmuelie/hashed-es6/workflows/Test/badge.svg" alt="Test Status"></p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#fieldconfig" class="tsd-kind-icon">Field<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#providercallback" class="tsd-kind-icon">Provider<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#schemaconfig" class="tsd-kind-icon">Schema<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#register" class="tsd-kind-icon">register</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#reset" class="tsd-kind-icon">reset</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#serialize" class="tsd-kind-icon">serialize</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#unregister" class="tsd-kind-icon">unregister</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
