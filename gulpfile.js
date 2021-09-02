@@ -63,4 +63,4 @@ gulp.task("clean", async function () {
     rimraf("dist/*.*", function ()  {});
 });
 
-gulp.task("build", gulp.series(["clean", "ts-build", "minify", "docs"]));
+gulp.task("build", gulp.series(["clean", "ts-build", "minify"]));
