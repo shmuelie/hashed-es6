@@ -23,6 +23,17 @@ export function typeOf(value: any): "object" | "array" | "date" | "string" | "nu
 }
 
 /**
+ *
+ * @param value
+ * @returns
+ * @internal
+ */
+export function isPrimative(value: any): value is string | number | boolean {
+    const type = typeof value;
+    return type === "boolean" || type === "number" || type === "string";
+}
+
+/**
  * Copy properties from one object to another.
  * @param dest The destination object.
  * @param source The source object.
