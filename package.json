@@ -4,7 +4,7 @@
         "name": "Shmueli Englard"
     },
     "bugs": {
-        "url": "https://github.com/shmuelie/hashing-es6/issues"
+        "url": "https://github.com/shmuelie/hashed-es6/issues"
     },
     "description": "Serialize state from multiple providers using location.hash",
     "devDependencies": {
@@ -23,7 +23,7 @@
         "typedoc": "0.20.36",
         "typescript": "4.2.4"
     },
-    "homepage": "https://shmuelie.github.io/hashing-es6/",
+    "homepage": "https://shmuelie.github.io/hashed-es6/",
     "keywords": [
         "hash",
         "state",
@@ -31,11 +31,11 @@
     ],
     "license": "MIT",
     "main": "./dist/index.min.js",
-    "name": "hashing-es6",
+    "name": "hashed-es6",
     "private": false,
     "repository": {
         "type": "git",
-        "url": "https://github.com/shmuelie/hashing-es6.git"
+        "url": "https://github.com/shmuelie/hashed-es6.git"
     },
     "scripts": {
         "build": "gulp build",
