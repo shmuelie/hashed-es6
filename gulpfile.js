@@ -10,9 +10,9 @@ import fsa from 'fs/promises'
 import rewriteImports from 'gulp-rewrite-imports'
 import path from 'path'
 
-/** @type {{version:string}} */
+/** @type {{version:string,name:string}} */
 const pj = await fsa.readFile("package.json").then(jsonString => JSON.parse(jsonString));
-const unpkgRoot = "https://unpkg.com/hashing-es6@" + pj.version + "/dist/";
+const unpkgRoot = "https://unpkg.com/" + pj.name + "@" + pj.version + "/dist/";
 /** @type {{[k:string]: string}} */
 const importMappings = {};
 for (const srcFile of await fsa.readdir("src/")) {
