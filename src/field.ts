@@ -1,5 +1,5 @@
-import { typeOf } from './utils.js'
-import { SerializableTypes, getDeserializer, getSerializer} from './serializers.js'
+import { typeOf, isPrimative } from './utils.js'
+import { getDeserializer, getSerializer} from './serializers.js'
 
 /**
  * Configuration for a field.
@@ -37,16 +37,19 @@ export class Field {
      *     functions.  As a shorthand for providing a config object with a `default`
      *     property, a default value may be provided directly.
      */
-    constructor(config: FieldConfig | SerializableTypes) {
-        if (typeOf(config) !== "object") {
+    constructor(config: FieldConfig) {
+        if (isPrimative(config)) {
             this.default = config;
+            const type = typeOf(this.default);
+            this.serialize = getSerializer(type);
+            this.deserialize = getDeserializer(type);
         } else if ("default" in config) {
             this.default = config.default;
+            const type = typeOf(this.default);
+            this.serialize = config.serialize ? config.serialize : getSerializer(type);
+            this.deserialize = config.deserialize ? config.deserialize : getDeserializer(type);
         } else {
             throw new Error("Missing default");
         }
-        const type = typeOf(this.default);
-        this.serialize = "serialize" in config && config.serialize ? config.serialize : getSerializer(type);
-        this.deserialize = "deserialize" in config && config.deserialize ? config.deserialize : getDeserializer(type);
     }
 }
