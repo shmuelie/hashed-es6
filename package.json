@@ -16,7 +16,7 @@
         "gulp-sourcemaps": "3.0.0",
         "gulp-terser": "2.0.1",
         "gulp-typedoc": "3.0.1",
-        "gulp-typescript": "6.0.0-alpha.1",
+        "gulp-typescript": "5.0.1",
         "merge2": "1.4.1",
         "rimraf": "3.0.2",
         "terser": "5.7.0",
@@ -44,5 +44,5 @@
     },
     "type": "module",
     "types": "./dist/index.d.ts",
-    "version": "1.0.2"
+    "version": "1.0.3"
 }

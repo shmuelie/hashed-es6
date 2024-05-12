@@ -33,8 +33,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(typedoc@0.20.36(typescript@4.2.4))
       gulp-typescript:
-        specifier: 6.0.0-alpha.1
-        version: 6.0.0-alpha.1(typescript@4.2.4)
+        specifier: 5.0.1
+        version: 5.0.1(typescript@4.2.4)
       merge2:
         specifier: 1.4.1
         version: 1.4.1
@@ -77,6 +77,10 @@ packages:
   ansi-colors@1.1.0:
     resolution: {integrity: sha512-SFKX67auSNoVR38N3L+nvsPjOE0bybKTYbkf5tRvushrAPQ9V75huw0ZxBkKVeRU9kqH3d6HA4xTckbwZ4ixmA==}
     engines: {node: '>=0.10.0'}
+
+  ansi-colors@3.2.4:
+    resolution: {integrity: sha512-hHUXGagefjN2iRrID63xckIvotOXOojhQKWIPUZ4mNUZ9nLZW+7FMNoE1lOkEhNWYsx/7ysGIuJYCiMAA9FnrA==}
+    engines: {node: '>=6'}
 
   ansi-colors@4.1.3:
     resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
@@ -578,11 +582,11 @@ packages:
     peerDependencies:
       typedoc: '>=0.20.34'
 
-  gulp-typescript@6.0.0-alpha.1:
-    resolution: {integrity: sha512-KoT0TTfjfT7w3JItHkgFH1T/zK4oXWC+a8xxKfniRfVcA0Fa1bKrIhztYelYmb+95RB80OLMBreknYkdwzdi2Q==}
+  gulp-typescript@5.0.1:
+    resolution: {integrity: sha512-YuMMlylyJtUSHG1/wuSVTrZp60k1dMEFKYOvDf7OvbAJWrDtxxD4oZon4ancdWwzjj30ztiidhe4VXJniF0pIQ==}
     engines: {node: '>= 8'}
     peerDependencies:
-      typescript: '~2.7.1 || >=2.8.0-dev || >=2.9.0-dev || ~3.0.0 || >=3.0.0-dev || >=3.1.0-dev || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.7.0-dev '
+      typescript: ~2.7.1 || >=2.8.0-dev || >=2.9.0-dev || ~3.0.0 || >=3.0.0-dev || >=3.1.0-dev || >= 3.2.0-dev || >= 3.3.0-dev
 
   gulp@4.0.2:
     resolution: {integrity: sha512-dvEs27SCZt2ibF29xYgmnwwCYZxdxhQ/+LFWlbAW8y7jt68L/65402Lz3+CKy0Ov4rOs+NERmDq7YlZaDqUIfA==}
@@ -1498,6 +1502,8 @@ snapshots:
     dependencies:
       ansi-wrap: 0.1.0
 
+  ansi-colors@3.2.4: {}
+
   ansi-colors@4.1.3: {}
 
   ansi-gray@0.1.1:
@@ -2155,9 +2161,9 @@ snapshots:
       semver: 7.6.2
       typedoc: 0.20.36(typescript@4.2.4)
 
-  gulp-typescript@6.0.0-alpha.1(typescript@4.2.4):
+  gulp-typescript@5.0.1(typescript@4.2.4):
     dependencies:
-      ansi-colors: 4.1.3
+      ansi-colors: 3.2.4
       plugin-error: 1.0.1
       source-map: 0.7.4
       through2: 3.0.2
