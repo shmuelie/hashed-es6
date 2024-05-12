@@ -10,7 +10,7 @@ import fsa from 'fs/promises'
 import rewriteImports from 'gulp-rewrite-imports'
 import path from 'path'
 
-/** @type {{version:string,name:string}} */
+/** @type {import("types-package-json").PackageJson} */
 const pj = await fsa.readFile("package.json").then(jsonString => JSON.parse(jsonString));
 const unpkgRoot = "https://unpkg.com/" + pj.name + "@" + pj.version + "/dist/";
 /** @type {{[k:string]: string}} */
