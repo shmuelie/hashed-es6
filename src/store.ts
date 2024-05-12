@@ -205,7 +205,7 @@ export class Store {
 			state[key] = deserializedValue;
 			defaults[prefixed] = serializedDefault;
 			values[prefixed] = provider.schema.serialize(key, deserializedValue);
-			return false;
+			return true;
 		});
 		for (const prefixed in defaults) {
 			this.defaults[prefixed] = defaults[prefixed];
