@@ -43,7 +43,7 @@ export class Schema {
     /**
      * Call a callback for each field key.
      * @param callback Called with a local field key and
-     *     a prefixed key.
+     *     a prefixed key. Breaks out of the loop if returns false.
      * @param thisArg This argument for the callback.
      */
     forEachKey(callback: (key: string, prefixed: string) => boolean, thisArg?: any): void {
